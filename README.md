@@ -1,7 +1,7 @@
 # Sightcall Q&A API
 
 [![Continuous Integration](https://github.com/cmnemoi/sightcall_qa_api/actions/workflows/continuous_integration.yaml/badge.svg)](https://github.com/cmnemoi/sightcall_qa_api/actions/workflows/continuous_integration.yaml)
-[![Continuous Delivery](https://github.com/cmnemoi/sightcall_qa_api/actions/workflows/continuous_delivery.yaml/badge.svg)](https://github.com/cmnemoi/sightcall_qa_api/actions/workflows/continuous_delivery.yaml)
+[![Continuous Delivery](https://github.com/cmnemoi/sightcall_qa_api/actions/workflows/deploy_api.yaml/badge.svg)](https://github.com/cmnemoi/sightcall_qa_api/actions/workflows/deploy_api.yaml)
 [![codecov](https://codecov.io/gh/cmnemoi/sightcall_qa_api/graph/badge.svg?token=FLAARH38AG)](https://codecov.io/gh/cmnemoi/sightcall_qa_api)
 
 A RAG-based API to answer questions about SightCall using curated data.
