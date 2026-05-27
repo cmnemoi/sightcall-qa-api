@@ -15,6 +15,9 @@ services:
       - traefik.docker.network=traefik-proxy
       - traefik.http.routers.sightcall-qa.rule=Host(`${APP_HOST}`)
       - traefik.http.services.sightcall-qa.loadbalancer.server.port=3000
+      - traefik.http.routers.sightcall-qa.entrypoints=websecure
+      - traefik.http.routers.sightcall-qa.tls.certresolver=letsencrypt
+      - traefik.http.routers.sightcall-qa.service=sightcall-qa
 
 networks:
   traefik:
