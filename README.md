@@ -6,12 +6,14 @@
 
 A RAG-based API to answer questions about SightCall using curated data.
 
+This repository also serves as a deployment demo/archive: it still contains the former GCP setup, where infrastructure was provisioned automatically with Terraform and the API was deployed on Google Cloud Run. That infrastructure flow is kept for reference, but the current active deployment workflow targets an OVH VPS because it is more cost-effective.
+
 Stack:
 - [FastAPI](https://fastapi.tiangolo.com/) for the API, [pytest](https://docs.pytest.org/en/stable/) for automated testing
 - [PGVector](https://github.com/pgvector/pgvector) for the vector database allowing document retrieval
 - [Github Actions](https://github.com/features/actions) for CI/CD pipeline
-- [Google Cloud Run](https://cloud.google.com/run) for containerized deployment
-- [Terraform](https://www.terraform.io/) for automated infrastructure provisioning
+- [OVH VPS](https://www.ovhcloud.com/) for the current production deployment
+- [Google Cloud Run](https://cloud.google.com/run) and [Terraform](https://www.terraform.io/) as the archived demo deployment path
 
 # Installation
 

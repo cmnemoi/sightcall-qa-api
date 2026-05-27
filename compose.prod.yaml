@@ -1,0 +1,22 @@
+services:
+  app:
+    image: ${APP_IMAGE}:${IMAGE_TAG}
+    restart: always
+    environment:
+      DATABASE_URL: ${DATABASE_URL}
+      ENV: production
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+    networks:
+      - traefik
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=traefik-proxy
+      - traefik.http.routers.sightcall-qa.rule=Host(`${APP_HOST}`)
+      - traefik.http.services.sightcall-qa.loadbalancer.server.port=3000
+
+networks:
+  traefik:
+    external: true
+    name: traefik-proxy
