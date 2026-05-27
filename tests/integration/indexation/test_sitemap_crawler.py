@@ -6,9 +6,9 @@ from sightcall_qa_api.indexation.infrastructure.for_production.httpx_client impo
 
 
 class TestSitemapCrawlerIntegration:
-    def test_should_collect_links_from_category_sitemap(self):
+    def test_should_collect_links_from_press_release_sitemap(self):
         http_client = self._given_real_http_client()
-        root_url = self._given_category_sitemap_url()
+        root_url = self._given_press_release_sitemap()
         all_links = self._when_crawling_all_links(root_url, http_client)
         self._then_should_collect_at_least_one_link(all_links)
 
@@ -22,8 +22,8 @@ class TestSitemapCrawlerIntegration:
     def _given_real_http_client(self):
         return HTTPXClient()
 
-    def _given_category_sitemap_url(self):
-        return Url("https://sightcall.com/category-sitemap.xml")
+    def _given_press_release_sitemap(self):
+        return Url("https://sightcall.com/press-release-sitemap.xml")
 
     def _when_crawling_all_links(self, root_url: Url, http_client: HTTPXClient):
         crawler = SitemapCrawler(http_client=http_client)
@@ -32,7 +32,7 @@ class TestSitemapCrawlerIntegration:
 
     def _then_should_collect_at_least_one_link(self, all_links):
         assert isinstance(all_links, list)
-        assert all_links, "No links collected from category sitemap."
+        assert all_links, "No links collected from press release sitemap."
         for link in all_links:
             assert isinstance(link, str)
             assert link.startswith("https://sightcall.com/"), f"Unexpected link: {link}"
