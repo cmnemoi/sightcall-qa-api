@@ -5,7 +5,7 @@ variable "api_image_url" {
 
 variable "api_url" {
   type    = string
-  default = "api.sightcallbot.cmnemoi.com"
+  default = "api.sightcall.cmnemoi.com"
 }
 
 variable "cloud_run_env_vars" {
