@@ -9,20 +9,5 @@ services:
       DATABASE_URL: ${DATABASE_URL}
       ENV: production
       OPENAI_API_KEY: ${OPENAI_API_KEY}
-    networks:
-      - traefik
     extra_hosts:
       - host.docker.internal:host-gateway
-    labels:
-      - traefik.enable=true
-      - traefik.docker.network=traefik-proxy
-      - traefik.http.routers.sightcall-qa.rule=Host(`${APP_HOST}`)
-      - traefik.http.services.sightcall-qa.loadbalancer.server.port=3000
-      - traefik.http.routers.sightcall-qa.entrypoints=websecure
-      - traefik.http.routers.sightcall-qa.tls.certresolver=letsencrypt
-      - traefik.http.routers.sightcall-qa.service=sightcall-qa
-
-networks:
-  traefik:
-    external: true
-    name: traefik-proxy
