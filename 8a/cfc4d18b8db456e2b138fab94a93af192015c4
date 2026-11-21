@@ -1,0 +1,19 @@
+tests/integration/indexation/test_sitemap_crawler.py
+  s_6f8f2afc65b0e8::t_c08a994636c989 1-3,10-39,42-52
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8acfc4d18b8db456e2b138fab94a93af192015c4",
+  "prompts": {},
+  "sessions": {
+    "s_6f8f2afc65b0e8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "676e84f7-81a3-4b97-863a-91c7533f7033",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Charles-Meldhine Madi Mnemoi <icdk5b4zf@relay.firefox.com>"
+    }
+  }
+}
